@@ -1,8 +1,8 @@
 var a = prompt("Nhập a: ");
 var b = prompt("Nhập b: ");
 
-a = parseFloat(a);
-b = parseFloat(b);
+a = Number(a);
+b = Number(b);
 
 var tong = a + b;
 var hieu = a - b;

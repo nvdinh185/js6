@@ -1,4 +1,4 @@
-var students = [
+const students = [
     {
         id: 1,
         ten: "Dinh",
@@ -36,18 +36,18 @@ var students = [
     }
 ];
 
-var menu = `
-1. Thêm sinh viên:
-2. Sửa sinh viên:
-2. Xóa sinh viên:
+const menu = `1. Xem danh sách sinh viên:
+2. Thêm sinh viên:
+3. Sửa sinh viên:
+4. Xóa sinh viên:
 
-Nhập thao tác lựa chọn:
-
-`;
+Nhập thao tác lựa chọn:`;
 
 const input = prompt(menu);
 
 if (input == 1) {
+    console.log(students);
+} else if (input == 2) {
     var myname = prompt("Nhập tên sinh viên: ");
     var diachi = prompt("Nhập địa chỉ: ");
     var student = {
@@ -57,7 +57,8 @@ if (input == 1) {
     }
 
     students.push(student);
-} else if (input == 2) {
+    console.log(students);
+} else if (input == 3) {
     var idEdit = prompt("Nhập mã sinh viên muốn sửa: ");
 
     var editStudent = students.find(function (student) {
@@ -76,11 +77,12 @@ if (input == 1) {
         diachi: diaChiEdit
     }
     students.splice(editIndex, 1, student);
-} else if (input == 3) {
+    console.log(students);
+} else if (input == 4) {
     var idDel = prompt("Nhập mã sinh viên muốn xóa: ");
     var delIndex = students.findIndex(function (student) {
         return student.id == idDel;
     })
     students.splice(delIndex, 1);
+    console.log(students);
 }
-console.log(students);

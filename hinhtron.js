@@ -1,5 +1,5 @@
 var banKinh = prompt("Nhập bán kính: ");
-banKinh = parseFloat(banKinh);
+banKinh = Number(banKinh);
 
 const PI = 3.14;
 
