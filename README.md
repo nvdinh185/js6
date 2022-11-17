@@ -1,4 +1,6 @@
-## Cho mảng các số từ 1 đến 10 như sau:
+# BÀI TẬP ĐỂ ÁP DỤNG CÁC HÀM CƠ BẢN ĐỐI VỚI MẢNG: pop, shift, push, unshift, splice, concat, slice
+
+## Bài Tập 1: Cho mảng các số từ 1 đến 10 như sau:
 
 ```js
 var arrNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -31,3 +33,47 @@ var arrNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 var arrNumber2 = [11, 22, 33, 44, 55];
 ```
 - Nối mảng arrNumber2 vào mảng arrNumber
+
+## Bài tập 2: Cho mảng sinh viên gồm các thông tin như sau:
+
+```js
+const students = [
+    {
+        id: 1,
+        ten: "Dinh",
+        diachi: "hue"
+    },
+    {
+        id: 2,
+        name: "Nam",
+        diachi: "quang nam"
+    },
+    {
+        id: 3,
+        name: "Tan",
+        diachi: "da nang"
+    },
+    {
+        id: 4,
+        name: "Hung",
+        diachi: "hue"
+    },
+    {
+        id: 5,
+        name: "Tri",
+        diachi: "quang tri"
+    },
+    {
+        id: 6,
+        name: "Anh",
+        diachi: "hue"
+    },
+    {
+        id: 7,
+        name: "Binh",
+        diachi: "da nang"
+    }
+];
+```
+
+Sử dụng các hàm đã học ở trên để thực hiện các chức năng như: thêm, sửa, xóa sinh viên trong mảng đã cho
