@@ -27,17 +27,21 @@ var arrNumberCut = arrNumber.splice(0, 5);
 
 console.log(arrNumberCut);
 
-// Chèn thêm số 10 vào vị trí thứ 5 của mảng
-var replaceArr = arrNumber.splice(5, 0, 10);
+// Chèn thêm số 100 vào vị trí thứ 5 của mảng
+var replaceArr = arrNumber.splice(5, 0, 100);
+console.log(replaceArr);
 
-// Thay thế phần tử thứ 5 bằng số 10
-var replaceArr = arrNumber.splice(4, 1, 10);
+// Thay thế phần tử thứ 5 bằng số 100
+var replaceArr = arrNumber.splice(4, 1, 100);
+console.log(replaceArr);
 
 // copy từ mảng arrNumber thành 1 mảng mới từ vị trí 5 đến hết
 var copyArrNumber = arrNumber.slice(5);
+console.log(copyArrNumber);
 
 // copy từ mảng arrNumber thành 1 mảng mới từ vị trí đầu tiên đến vị trí thứ 5
 var copyArrNumber2 = arrNumber.slice(0, 5);
+console.log(copyArrNumber2);
 
 var arrNumber2 = [11, 22, 33, 44, 55];
 

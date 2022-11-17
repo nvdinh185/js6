@@ -40,7 +40,7 @@ var arrNumber2 = [11, 22, 33, 44, 55];
 const students = [
     {
         id: 1,
-        ten: "Dinh",
+        name: "Dinh",
         diachi: "hue"
     },
     {

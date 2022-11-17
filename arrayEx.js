@@ -1,7 +1,7 @@
 const students = [
     {
         id: 1,
-        ten: "Dinh",
+        name: "Dinh",
         diachi: "hue"
     },
     {
@@ -72,7 +72,7 @@ if (input == 1) {
     var diaChiEdit = prompt("Nhập địa chỉ sinh viên muốn sửa: ", editStudent.diachi);
 
     var student = {
-        id: parseFloat(idEdit),
+        id: Number(idEdit),
         name: nameEdit,
         diachi: diaChiEdit
     }
