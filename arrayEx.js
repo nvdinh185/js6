@@ -43,7 +43,12 @@ const menu = `1. Xem danh sách sinh viên:
 
 Nhập thao tác lựa chọn:`;
 
-const input = prompt(menu);
+try {
+    var input = prompt(menu);
+    if (input == "") throw new Error("Vui lòng nhập thao tác lựa chọn!");
+} catch (error) {
+    console.error(error);
+}
 
 if (input == 1) {
     console.log(students);
@@ -61,28 +66,38 @@ if (input == 1) {
 } else if (input == 3) {
     var idEdit = prompt("Nhập mã sinh viên muốn sửa: ");
 
-    var editStudent = students.find(function (student) {
-        return student.id == idEdit;
-    })
     var editIndex = students.findIndex(function (student) {
         return student.id == idEdit;
     })
+    if (editIndex == -1) {
+        alert("Không tìm thấy sinh viên muốn sửa!");
+    } else {
+        var editStudent = students.find(function (student) {
+            return student.id == idEdit;
+        })
 
-    var nameEdit = prompt("Nhập tên sinh viên muốn sửa: ", editStudent.name);
-    var diaChiEdit = prompt("Nhập địa chỉ sinh viên muốn sửa: ", editStudent.diachi);
+        var nameEdit = prompt("Nhập tên sinh viên muốn sửa: ", editStudent.name);
+        var diaChiEdit = prompt("Nhập địa chỉ sinh viên muốn sửa: ", editStudent.diachi);
 
-    var student = {
-        id: Number(idEdit),
-        name: nameEdit,
-        diachi: diaChiEdit
+        var student = {
+            id: Number(idEdit),
+            name: nameEdit,
+            diachi: diaChiEdit
+        }
+        students.splice(editIndex, 1, student);
     }
-    students.splice(editIndex, 1, student);
     console.log(students);
 } else if (input == 4) {
     var idDel = prompt("Nhập mã sinh viên muốn xóa: ");
     var delIndex = students.findIndex(function (student) {
         return student.id == idDel;
     })
-    students.splice(delIndex, 1);
+    if (delIndex != -1) {
+        students.splice(delIndex, 1);
+    } else {
+        alert("Không tìm thấy sinh viên muốn xóa!")
+    }
     console.log(students);
+} else {
+    alert("Có lỗi gì đó rồi!");
 }
