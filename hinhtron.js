@@ -1,10 +1,17 @@
-var banKinh = prompt("Nhập bán kính: ");
-banKinh = Number(banKinh);
+var banKinhStr = prompt("Nhập bán kính: ");
+var banKinh = Number(banKinhStr);
 
-const PI = 3.14;
+if (banKinhStr === '' || banKinhStr === null) {
+    alert('Vui long nhap!');
+} else if (isNaN(banKinh)) {
+    alert("Vui lòng nhập bán kính là số!")
+} else {
 
-const chuVi = banKinh * 2 * PI;
-const dienTich = banKinh * banKinh * 3.14;
+    const PI = 3.14;
 
-console.log("Chu vi: " + chuVi);
-console.log("Dien tich: " + dienTich);
+    const chuVi = banKinh * 2 * PI;
+    const dienTich = banKinh * banKinh * PI;
+
+    console.log("Chu vi: " + chuVi);
+    console.log("Dien tich: " + dienTich);
+}
