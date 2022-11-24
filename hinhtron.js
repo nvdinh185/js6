@@ -9,8 +9,8 @@ if (banKinhStr === '' || banKinhStr === null) {
 
     const PI = 3.14;
 
-    const chuVi = banKinh * 2 * PI;
-    const dienTich = banKinh * banKinh * PI;
+    var chuVi = banKinh * 2 * PI;
+    var dienTich = banKinh * banKinh * PI;
 
     console.log("Chu vi: " + chuVi);
     console.log("Dien tich: " + dienTich);

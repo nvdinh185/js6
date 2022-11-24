@@ -1,11 +1,11 @@
-var arrNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var arrNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// in mảng theo thứ tự tăng dần
+// in mảng theo thứ tự index tăng dần
 // for (let i = 0; i < arrNumber.length; i++) {
 //     console.log(arrNumber[i]);
 // }
 
-// in mảng theo thứ tự giảm dần
+// in mảng theo thứ tự index giảm dần
 // for (let i = arrNumber.length - 1; i >= 0; i--) {
 //     console.log(arrNumber[i]);
 // }
@@ -29,7 +29,7 @@ var arrNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // Chèn thêm số 100 vào phần tử thứ 5 của mảng
 // var replaceArr = arrNumber.splice(4, 0, 100); // thực hiện chèn
-// console.log(replaceArr); // không trả về gì cả
+// console.log(replaceArr); // trả về một mảng rỗng
 
 // Thay thế phần tử thứ 5 bằng số 100
 // var replaceArr = arrNumber.splice(4, 1, 100); // thực hiện thay thế
@@ -46,6 +46,6 @@ var arrNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 var arrNumber2 = [11, 22, 33, 44, 55];
 
 // Nối mảng arrNumber2 vào mảng arrNumber
-arrNumber = arrNumber.concat(arrNumber2);
+// arrNumber = arrNumber.concat(arrNumber2);
 
 console.log(arrNumber);
