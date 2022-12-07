@@ -156,6 +156,7 @@ var students = [
 
 Tạo menu chương trình như sau:
 --------------------------------------
+```js
 == TỪ ĐIỂN ANH VIỆT ==
 --1. Nhập dữ liệu
 --2. Xuất dữ liệu
@@ -166,3 +167,4 @@ Khi chọn 1: Nhập thông tin các từ tiếng Anh từ bàn phím.
 Khi chọn 2: Hiển thị thông tin các từ tiếng Anh đã nhập.
 Khi chọn 3: Nhập vào một từ tiếng Anh bất kỳ, tìm kiếm trong từ điển, nếu có thì in nghĩa tiếng Việt của từ đó. Nếu không có thì in ra không tìm thấy.
 Khi chọn 4: Thoát khỏi chương trình và in ra dòng chữ “Cảm ơn đã sử dụng từ điển!”
+```
