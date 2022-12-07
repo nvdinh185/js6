@@ -91,18 +91,14 @@ function findGoodStudent(arrStudents) {
     }
 }
 console.log(findGoodStudent(students));
+// console.log(students);
 
 // 5. Hàm cộng cho mỗi sinh viên 1 điểm toán
 function addMath(arrStudents) {
     var listNewStudents = [];
     for (const student of arrStudents) {
-        listNewStudents.push({
-            id: student.id,
-            name: student.name,
-            toan: student.toan < 10 ? student.toan + 1 : student.toan,
-            ly: student.ly,
-            hoa: student.hoa
-        });
+        student.toan < 10 ? student.toan += 1 : '',
+            listNewStudents.push(student);
     }
     return listNewStudents;
 }
@@ -112,7 +108,21 @@ for (const student of listStudents) {
     console.log(student);
 }
 
-// 6. Hàm tính tổng điểm toán của các sinh viên, và tính điểm toán trung bình của các sinh viên
+// console.log(students);
+
+// 6. Hàm tính tổng điểm 3 môn
+function sumScore(arrStudents) {
+    var listNewStudents = [];
+    for (const student of arrStudents) {
+        student.sum = student.toan + student.ly + student.hoa;
+        listNewStudents.push(student);
+    }
+    return listNewStudents;
+}
+
+console.log(sumScore(students));
+
+// 7. Hàm tính tổng điểm toán của các sinh viên, và tính điểm toán trung bình của các sinh viên
 function totalMath(arrStudents) {
     var sum = 0;
     for (const student of arrStudents) {
@@ -123,3 +133,18 @@ function totalMath(arrStudents) {
 
 console.log("Tổng điểm toán của các sinh viên: ", totalMath(students));
 console.log("Điểm toán trung bình của các sinh viên: ", totalMath(students) / students.length);
+
+//8. Sắp xếp danh sách sinh viên theo tổng điểm tăng dần
+function compare(a, b) {
+    if (a.sun > b.sum) {
+        return 1;
+    }
+    if (a.sum < b.sum) {
+        return -1;
+    }
+    return 0;
+}
+
+students.sort(compare);
+
+console.log(students);

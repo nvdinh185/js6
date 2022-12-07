@@ -146,4 +146,23 @@ var students = [
 
 5. Cộng cho mỗi sinh viên 1 điểm toán
 
-6. Tính tổng điểm toán của các sinh viên, và tính điểm toán trung bình của các sinh viên
+6. Thêm thuộc tính tổng điểm 3 môn
+
+7. Tính tổng điểm toán của các sinh viên, và tính điểm toán trung bình của các sinh viên
+
+8. Sắp xếp danh sách sinh viên theo tổng điểm tăng dần
+
+## Bài tập 4: Viết chương trình mô phỏng từ điển Anh Việt
+
+Tạo menu chương trình như sau:
+--------------------------------------
+== TỪ ĐIỂN ANH VIỆT ==
+--1. Nhập dữ liệu
+--2. Xuất dữ liệu
+--3. Dịch từ
+--4. Thoát
+
+Khi chọn 1: Nhập thông tin các từ tiếng Anh từ bàn phím.
+Khi chọn 2: Hiển thị thông tin các từ tiếng Anh đã nhập.
+Khi chọn 3: Nhập vào một từ tiếng Anh bất kỳ, tìm kiếm trong từ điển, nếu có thì in nghĩa tiếng Việt của từ đó. Nếu không có thì in ra không tìm thấy.
+Khi chọn 4: Thoát khỏi chương trình và in ra dòng chữ “Cảm ơn đã sử dụng từ điển!”
