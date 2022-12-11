@@ -11,7 +11,9 @@ function inputNumber(msg) {
 }
 
 function giaiPTB1(a, b) {
-    if (a == 0 && b == 0) {
+    if (!a || !b) {
+        console.log("Lỗi khi nhập!");
+    } if (a == 0 && b == 0) {
         console.log("Phương trình vô số nghiệm!");
     } else if (a == 0 && b != 0) {
         console.log("Phương trình vô nghiệm!");
@@ -20,10 +22,7 @@ function giaiPTB1(a, b) {
     }
 }
 
-function giaiPTB2() {
-    var a = inputNumber("Nhập hệ số a: ");
-    var b = inputNumber("Nhập hệ số b: ");
-    var c = inputNumber("Nhập hệ số c: ");
+function giaiPTB2(a, b, c) {
     if (!a || !b || !c) {
         console.log("Lỗi khi nhập!");
     } else if (a == 0) {
@@ -42,4 +41,9 @@ function giaiPTB2() {
     }
 }
 
-giaiPTB2();
+var a = inputNumber("Nhập hệ số a: ");
+var b = inputNumber("Nhập hệ số b: ");
+var c = inputNumber("Nhập hệ số c: ");
+
+giaiPTB2(a, b, c);
+giaiPTB1(a, b);

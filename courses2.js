@@ -29,12 +29,9 @@ var courses = [
 var newCourses = function (listCourses) {
     var newListCourses = [];
     for (const course of listCourses) {
-        newListCourses.push({
-            id: course.id,
-            name: `Khoa hoc ${course.name}`,
-            coin: course.coin,
-            textCoin: `Gia ${course.coin}`
-        });
+        course.name = `Khoa hoc ${course.name}`;
+        course.coinText = `Gia ${course.coin}`;
+        newListCourses.push(course);
     }
     return newListCourses;
 }
