@@ -168,3 +168,43 @@ Khi chọn 2: Hiển thị thông tin các từ tiếng Anh đã nhập.
 Khi chọn 3: Nhập vào một từ tiếng Anh bất kỳ, tìm kiếm trong từ điển, nếu có thì in nghĩa tiếng Việt của từ đó. Nếu không có thì in ra không tìm thấy.
 Khi chọn 4: Thoát khỏi chương trình và in ra dòng chữ “Cảm ơn đã sử dụng từ điển!”
 ```
+
+## Bài tập 5: Cho danh sách các đội bóng tham dự World Cup như sau:
+
+```js
+const doiBong = [
+    {
+        id: 1,
+        ten: 'Brazin',
+        huanLuyenVien: 'Tite',
+        soLanVoDich: 15
+    },
+    {
+        id: 2,
+        ten: 'Đức',
+        huanLuyenVien: 'Hansi Flick',
+        soLanVoDich: 10
+    },
+    {
+        id: 3,
+        ten: 'Pháp',
+        huanLuyenVien: 'Deschamps',
+        soLanVoDich: 12
+    }
+]
+```
+
+Tạo menu như sau:
+---------------------------------------
+1. Nhập dữ liệu
+2. Xuất dữ liệu
+3. Tìm thông tin
+4. Xóa thông tin đội bóng
+0. Thoát
+---------------------------------------
+
+- Khi chọn 1: Nhập đội bóng tham gia World Cup.
+- Khi chọn 2: Hiển thị thông tin các đội bóng đã nhập
+- Khi chọn 3: Nhập vào id và hiển thị thông tin đội bóng có id đó. Nếu không có thì thông báo "Không tìm thấy"
+- Khi chọn 4: Nhập vào id và xóa thông tin đội bóng có id đó. Nếu không có thì thông báo "Không tìm thấy đội bóng nào để xóa".
+- Khi chọn 0: Thoát khỏi hệ thống và in ra dòng chữ: "Goodbye!"
