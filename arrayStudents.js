@@ -91,7 +91,6 @@ function findGoodStudent(arrStudents) {
     }
 }
 console.log(findGoodStudent(students));
-// console.log(students);
 
 // 5. Hàm cộng cho mỗi sinh viên 1 điểm toán
 function addMath(arrStudents) {

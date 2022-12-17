@@ -43,7 +43,16 @@ const menu = `1. Xem danh sách sinh viên:
 
 Nhập thao tác lựa chọn:`;
 
-var input = prompt(menu);
+var cont = true;
+do {
+    try {
+        var input = prompt(menu);
+        if (input == "") throw new Error("Vui lòng nhập thao tác lựa chọn!");
+        cont = false;
+    } catch (error) {
+        alert(error);
+    }
+} while (cont);
 
 if (input == 1) {
     console.log(students);
