@@ -50,16 +50,56 @@ var students = [
     }
 ];
 
+
+const menu = `1. kiểm tra xem có phải tất cả sinh viên đều có các môn trên điểm trung bình không?
+2. kiểm tra xem có sinh viên nào xếp loại giỏi không?
+3. lọc ra các sinh viên xếp loại giỏi
+4. tìm 1 sinh viên xếp loại giỏi
+5. cộng cho mỗi sinh viên 1 điểm toán
+6. thêm thuộc tính tổng điểm 3 môn
+7. tính tổng điểm toán của các sinh viên
+8. tính điểm toán trung bình của các sinh viên
+9. Sắp xếp danh sách sinh viên theo tổng điểm tăng dần
+0. Thoát
+
+Nhập thao tác lựa chọn:`;
+
+var input = prompt(menu);
+
+if (input == 1) {
+    console.log(isUpNormal(students));
+} else if (input == 2) {
+    console.log(haveGoodStudent(students));
+} else if (input == 3) {
+    displayGoodStudents(students);
+} else if (input == 4) {
+    console.log(findGoodStudent(students));
+} else if (input == 5) {
+    var listStudents = addMath(students);
+    for (const student of listStudents) {
+        console.log(student);
+    }
+} else if (input == 6) {
+    console.log(sumScore(students));
+} else if (input == 7) {
+    console.log("Tổng điểm toán của các sinh viên: ", totalMath(students));
+} else if (input == 8) {
+    console.log("Điểm toán trung bình của các sinh viên: ", totalMath(students) / students.length);
+} else if (input == 9) {
+    sortStudents(students);
+} else {
+    console.log('Good bye!!!');
+}
+
 // 1. Hàm kiểm tra xem có phải tất cả sinh viên đều có các môn trên điểm trung bình không? (biết điểm trung bình là 5)
 function isUpNormal(arrStudents) {
     for (const student of arrStudents) {
-        if (!(student.toan > 5 && student.ly > 5 && student.hoa > 5)) {
+        if (!(student.toan >= 5 && student.ly >= 5 && student.hoa >= 5)) {
             return false;
         }
     }
     return true;
 }
-console.log(isUpNormal(students));
 
 // 2. Hàm kiểm tra xem có sinh viên nào xếp loại giỏi không? (có các môn đều 8 điểm trở lên)
 function haveGoodStudent(arrStudents) {
@@ -70,7 +110,6 @@ function haveGoodStudent(arrStudents) {
     }
     return false;
 }
-console.log(haveGoodStudent(students));
 
 // 3. Hàm lọc ra các sinh viên xếp loại giỏi và in ra thông tin gồm Tên, Toán, Lý, Hóa
 function displayGoodStudents(arrStudents) {
@@ -80,7 +119,6 @@ function displayGoodStudents(arrStudents) {
         }
     }
 }
-displayGoodStudents(students);
 
 // 4. Hàm tìm 1 sinh viên xếp loại giỏi
 function findGoodStudent(arrStudents) {
@@ -90,7 +128,6 @@ function findGoodStudent(arrStudents) {
         }
     }
 }
-console.log(findGoodStudent(students));
 
 // 5. Hàm cộng cho mỗi sinh viên 1 điểm toán
 function addMath(arrStudents) {
@@ -102,14 +139,7 @@ function addMath(arrStudents) {
     return listNewStudents;
 }
 
-var listStudents = addMath(students);
-for (const student of listStudents) {
-    console.log(student);
-}
-
-// console.log(students);
-
-// 6. Hàm tính tổng điểm 3 môn
+// 6. Hàm thêm thuộc tính tổng điểm 3 môn
 function sumScore(arrStudents) {
     var listNewStudents = [];
     for (const student of arrStudents) {
@@ -118,8 +148,6 @@ function sumScore(arrStudents) {
     }
     return listNewStudents;
 }
-
-console.log(sumScore(students));
 
 // 7. Hàm tính tổng điểm toán của các sinh viên, và tính điểm toán trung bình của các sinh viên
 function totalMath(arrStudents) {
@@ -130,20 +158,20 @@ function totalMath(arrStudents) {
     return sum;
 }
 
-console.log("Tổng điểm toán của các sinh viên: ", totalMath(students));
-console.log("Điểm toán trung bình của các sinh viên: ", totalMath(students) / students.length);
+//9. Hàm sắp xếp danh sách sinh viên theo tổng điểm tăng dần
+function sortStudents(arrStudents) {
 
-//8. Sắp xếp danh sách sinh viên theo tổng điểm tăng dần
-function compare(a, b) {
-    if (a.sun > b.sum) {
-        return 1;
+    function compare(a, b) {
+        if (a.toan > b.toan) {
+            return 1;
+        }
+        if (a.toan < b.toan) {
+            return -1;
+        }
+        return 0;
     }
-    if (a.sum < b.sum) {
-        return -1;
-    }
-    return 0;
+
+    arrStudents.sort(compare);
+
+    console.log(arrStudents);
 }
-
-students.sort(compare);
-
-console.log(students);
