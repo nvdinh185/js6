@@ -161,7 +161,7 @@ var students = [
 
 Tạo menu chương trình như sau:
 --------------------------------------
-```js
+```html
 == TỪ ĐIỂN ANH VIỆT ==
 --1. Nhập dữ liệu
 --2. Xuất dữ liệu
