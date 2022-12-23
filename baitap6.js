@@ -109,10 +109,11 @@ function sapXep(desc) {
 // 5. Hiển thị
 function hienThi() {
     console.log('===DANH SÁCH QUÂN BÀI===');
-    for (const el of danhSachQuanBai) {
-        for (const key in el) {
-            console.log(key + ": " + el[key]);
-        }
-        console.log("================");
-    }
+    // for (const el of danhSachQuanBai) {
+    //     for (const key in el) {
+    //         console.log(key + ": " + el[key]);
+    //     }
+    //     console.log("================");
+    // }
+    console.table(danhSachQuanBai);
 }
