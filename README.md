@@ -80,7 +80,106 @@ const students = [
 
 # BÀI TẬP ĐỂ ÁP DỤNG CÁC HÀM, VÒNG LẶP ĐỐI VỚI MẢNG
 
-## Bài tập 3: Cho mảng sinh viên gồm các thông tin như sau:
+## Bài tập 3: Viết chương trình mô phỏng từ điển Anh Việt
+
+Tạo menu chương trình như sau:
+--------------------------------------
+```html
+== TỪ ĐIỂN ANH VIỆT ==
+--1. Nhập dữ liệu
+--2. Xuất dữ liệu
+--3. Dịch từ
+--4. Thoát
+
+Khi chọn 1: Nhập thông tin các từ tiếng Anh từ bàn phím.
+Khi chọn 2: Hiển thị thông tin các từ tiếng Anh đã nhập.
+Khi chọn 3: Nhập vào một từ tiếng Anh bất kỳ, tìm kiếm trong từ điển, nếu có thì in nghĩa tiếng Việt của từ đó. Nếu không có thì in ra không tìm thấy.
+Khi chọn 4: Thoát khỏi chương trình và in ra dòng chữ “Cảm ơn đã sử dụng từ điển!”
+```
+
+## Bài tập 4: Cho danh sách các đội bóng tham dự World Cup như sau:
+
+```js
+const danhSachDoiBong = [
+    {
+        id: 1,
+        ten: 'Brazin',
+        huanLuyenVien: 'Tite',
+        soLanVoDich: 15
+    },
+    {
+        id: 2,
+        ten: 'Đức',
+        huanLuyenVien: 'Hansi Flick',
+        soLanVoDich: 10
+    },
+    {
+        id: 3,
+        ten: 'Pháp',
+        huanLuyenVien: 'Deschamps',
+        soLanVoDich: 12
+    }
+]
+```
+
+Tạo menu như sau:
+---------------------------------------
+1. Nhập dữ liệu
+2. Xuất dữ liệu
+3. Tìm thông tin
+4. Xóa thông tin đội bóng
+0. Thoát
+---------------------------------------
+
+- Khi chọn 1: Nhập đội bóng tham gia World Cup.
+- Khi chọn 2: Hiển thị thông tin các đội bóng đã nhập
+- Khi chọn 3: Nhập vào id và hiển thị thông tin đội bóng có id đó. Nếu không có thì thông báo "Không tìm thấy"
+- Khi chọn 4: Nhập vào id và xóa thông tin đội bóng có id đó. Nếu không có thì thông báo "Không tìm thấy đội bóng nào để xóa".
+- Khi chọn 0: Thoát khỏi hệ thống và in ra dòng chữ: "Goodbye!"
+
+## Bài tập 5: Cho danh sách các quân bài như sau:
+
+```js
+const danhSachQuanBai = [
+    {
+        id: 1,
+        name: 'Ba bích', // Tên quân bài, ví dụ: Năm cơ, Sáu bích...
+        exp: 3, //Hệ số quân bài (từ 1 đến 13)
+        point: 1 // Điểm của quân bài (từ 1 đến 4)
+    },
+    {
+        id: 2,
+        name: 'Năm rô',
+        exp: 5,
+        point: 3
+    },
+    {
+        id: 3,
+        name: 'Bốn cơ',
+        exp: 4,
+        point: 4
+    }
+]
+```
+
+Tạo menu như sau:
+---------------------------------------
+1. Nhập 1 quân bài
+2. Nhập mảng các quân bài
+3. Sắp xếp tăng dần
+4. Sắp xếp giảm dần
+5. Xuất dữ liệu
+0. Thoát
+---------------------------------------
+
+- Khi chọn 1: Nhập 1 quân bài và thêm vào danh sách
+- Khi chọn 2: Nhập mảng các quân bài và thêm vào danh sách
+- Khi chọn 3: Sắp xếp các quân bài theo hệ số tăng dần
+- Khi chọn 4: Sắp xếp các quân bài theo hệ số giảm dần
+- Khi chọn 5: Hiển thị danh sách các quân bài
+- Khi chọn 0: Thoát khỏi hệ thống và in ra dòng chữ: "Goodbye!"
+
+## Bài tập 6: Cho mảng sinh viên gồm các thông tin như sau:
 
 
 ```js
@@ -156,102 +255,3 @@ var students = [
 8. tính điểm toán trung bình của các sinh viên
 
 9. Sắp xếp danh sách sinh viên theo điểm toán tăng dần
-
-## Bài tập 4: Viết chương trình mô phỏng từ điển Anh Việt
-
-Tạo menu chương trình như sau:
---------------------------------------
-```html
-== TỪ ĐIỂN ANH VIỆT ==
---1. Nhập dữ liệu
---2. Xuất dữ liệu
---3. Dịch từ
---4. Thoát
-
-Khi chọn 1: Nhập thông tin các từ tiếng Anh từ bàn phím.
-Khi chọn 2: Hiển thị thông tin các từ tiếng Anh đã nhập.
-Khi chọn 3: Nhập vào một từ tiếng Anh bất kỳ, tìm kiếm trong từ điển, nếu có thì in nghĩa tiếng Việt của từ đó. Nếu không có thì in ra không tìm thấy.
-Khi chọn 4: Thoát khỏi chương trình và in ra dòng chữ “Cảm ơn đã sử dụng từ điển!”
-```
-
-## Bài tập 5: Cho danh sách các đội bóng tham dự World Cup như sau:
-
-```js
-const danhSachDoiBong = [
-    {
-        id: 1,
-        ten: 'Brazin',
-        huanLuyenVien: 'Tite',
-        soLanVoDich: 15
-    },
-    {
-        id: 2,
-        ten: 'Đức',
-        huanLuyenVien: 'Hansi Flick',
-        soLanVoDich: 10
-    },
-    {
-        id: 3,
-        ten: 'Pháp',
-        huanLuyenVien: 'Deschamps',
-        soLanVoDich: 12
-    }
-]
-```
-
-Tạo menu như sau:
----------------------------------------
-1. Nhập dữ liệu
-2. Xuất dữ liệu
-3. Tìm thông tin
-4. Xóa thông tin đội bóng
-0. Thoát
----------------------------------------
-
-- Khi chọn 1: Nhập đội bóng tham gia World Cup.
-- Khi chọn 2: Hiển thị thông tin các đội bóng đã nhập
-- Khi chọn 3: Nhập vào id và hiển thị thông tin đội bóng có id đó. Nếu không có thì thông báo "Không tìm thấy"
-- Khi chọn 4: Nhập vào id và xóa thông tin đội bóng có id đó. Nếu không có thì thông báo "Không tìm thấy đội bóng nào để xóa".
-- Khi chọn 0: Thoát khỏi hệ thống và in ra dòng chữ: "Goodbye!"
-
-## Bài tập 6: Cho danh sách các quân bài như sau:
-
-```js
-const danhSachQuanBai = [
-    {
-        id: 1,
-        name: 'Ba bích', // Tên quân bài, ví dụ: Năm cơ, Sáu bích...
-        exp: 3, //Hệ số quân bài (từ 1 đến 13)
-        point: 1 // Điểm của quân bài (từ 1 đến 4)
-    },
-    {
-        id: 2,
-        name: 'Năm rô',
-        exp: 5,
-        point: 3
-    },
-    {
-        id: 3,
-        name: 'Bốn cơ',
-        exp: 4,
-        point: 4
-    }
-]
-```
-
-Tạo menu như sau:
----------------------------------------
-1. Nhập 1 quân bài
-2. Nhập mảng các quân bài
-3. Sắp xếp tăng dần
-4. Sắp xếp giảm dần
-5. Xuất dữ liệu
-0. Thoát
----------------------------------------
-
-- Khi chọn 1: Nhập 1 quân bài và thêm vào danh sách
-- Khi chọn 2: Nhập mảng các quân bài và thêm vào danh sách
-- Khi chọn 3: Sắp xếp các quân bài theo hệ số tăng dần
-- Khi chọn 4: Sắp xếp các quân bài theo hệ số giảm dần
-- Khi chọn 5: Hiển thị danh sách các quân bài
-- Khi chọn 0: Thoát khỏi hệ thống và in ra dòng chữ: "Goodbye!"

@@ -49,11 +49,11 @@ if (input == 1) {
     console.log(students);
 } else if (input == 2) {
     var newName = prompt("Nhập tên sinh viên: ");
-    var NewAddress = prompt("Nhập địa chỉ: ");
+    var newAddress = prompt("Nhập địa chỉ: ");
     var newStudent = {
         id: students.length + 1,
         name: newName,
-        address: NewAddress
+        address: newAddress
     }
 
     students.push(newStudent);
@@ -99,5 +99,5 @@ if (input == 1) {
     }
     console.log(students);
 } else {
-    alert("Có lỗi gì đó rồi!");
+    alert("Vui lòng nhập đúng thao tác lựa chọn!");
 }

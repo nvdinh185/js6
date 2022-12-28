@@ -1,28 +1,29 @@
-const danhSachDoiBong = [
+const danhSachQuanBai = [
     {
         id: 1,
-        ten: 'Brazin',
-        huanLuyenVien: 'Tite',
-        soLanVoDich: 15
+        name: 'Ba bích', // Tên quân bài, ví dụ: Năm cơ, Sáu bích...
+        exp: 3, //Hệ số quân bài (từ 1 đến 13)
+        point: 1 // Điểm của quân bài (từ 1 đến 4)
     },
     {
         id: 2,
-        ten: 'Đức',
-        huanLuyenVien: 'Hansi Flick',
-        soLanVoDich: 10
+        name: 'Năm rô',
+        exp: 5,
+        point: 3
     },
     {
         id: 3,
-        ten: 'Pháp',
-        huanLuyenVien: 'Deschamps',
-        soLanVoDich: 12
+        name: 'Bốn cơ',
+        exp: 4,
+        point: 4
     }
 ]
 
-const menu = `1. Nhập dữ liệu
-2. Xuất dữ liệu
-3. Tìm thông tin
-4. Xóa thông tin đội bóng
+const menu = `1. Nhập 1 quân bài
+2. Nhập mảng các quân bài
+3. Sắp xếp tăng dần
+4. Sắp xếp giảm dần
+5. Xuất dữ liệu
 0. Thoát
 
 Nhập thao tác lựa chọn:`;
@@ -30,55 +31,89 @@ Nhập thao tác lựa chọn:`;
 var input = prompt(menu);
 
 if (input == 1) {
-    them();
-    console.log(danhSachDoiBong);
+    them1QuanBai();
+    hienThi();
 } else if (input == 2) {
-    console.log(danhSachDoiBong);
+    nhapMangQuanBai();
+    hienThi();
 } else if (input == 3) {
-    tim();
+    sapXep();
+    hienThi();
 } else if (input == 4) {
-    xoa();
-    console.log(danhSachDoiBong);
+    sapXep(1);
+    hienThi();
+} else if (input == 5) {
+    hienThi();
 } else {
     console.log('Goodbye!');
 }
 
-// 1. Thêm đội bóng
-function them() {
-    var ten = prompt('Nhập tên đội bóng:');
-    var huanLuyenVien = prompt('Nhập tên huấn luyện viên:');
-    var soLanVoDich = prompt('Nhập số lần vô địch: ');
-    var doiBongMoi = {
-        id: danhSachDoiBong.length + 1,
-        ten: ten,
-        huanLuyenVien: huanLuyenVien,
-        soLanVoDich: Number(soLanVoDich)
+// 1. Thêm 1 quân bài
+function them1QuanBai() {
+    var name = prompt('Nhập tên quân bài:');
+    var exp = prompt('Nhập hệ số:');
+    var point = prompt('Nhập điểm: ');
+    var quanBaiMoi = {
+        id: danhSachQuanBai.length + 1,
+        name: name,
+        exp: Number(exp),
+        point: Number(point)
     }
-    danhSachDoiBong.push(doiBongMoi);
+    danhSachQuanBai.push(quanBaiMoi);
 }
 
-// 2. Tìm đội bóng
-function tim() {
-    var id = prompt('Nhập id đội bóng muốn tìm: ');
-    var doiBong = danhSachDoiBong.find(function (doibong) {
-        return doibong.id === Number(id);
-    })
-    if (doiBong) {
-        console.log(doiBong);
-    } else {
-        console.log('Không tìm thấy!');
+// 2. Nhập mảng quân bài
+function nhapMangQuanBai() {
+    var number = prompt('Nhập số lượng quân bài: ');
+    for (let i = 1; i <= number; i++) {
+        var name = prompt('Nhập tên quân bài:');
+        var exp = prompt('Nhập hệ số:');
+        var point = prompt('Nhập điểm: ');
+        var quanBaiMoi = {
+            id: danhSachQuanBai.length + 1,
+            name: name,
+            exp: Number(exp),
+            point: Number(point)
+        }
+        danhSachQuanBai.push(quanBaiMoi);
     }
 }
 
-// 3. Xóa đội bóng
-function xoa() {
-    var id = prompt('Nhập id đội bóng muốn xóa: ');
-    var idx = danhSachDoiBong.findIndex(function (doibong) {
-        return doibong.id === Number(id);
-    })
-    if (idx != -1) {
-        danhSachDoiBong.splice(idx, 1);
+// 3-4. Sắp xếp
+function sapXep(desc) {
+    if (desc) {
+        function compare(a, b) {
+            if (a.exp < b.exp) {
+                return 1;
+            }
+            if (a.exp > b.exp) {
+                return -1;
+            }
+            return 0;
+        }
     } else {
-        console.log('Không tìm thấy!');
+        function compare(a, b) {
+            if (a.exp > b.exp) {
+                return 1;
+            }
+            if (a.exp < b.exp) {
+                return -1;
+            }
+            return 0;
+        }
     }
+
+    danhSachQuanBai.sort(compare);
+}
+
+// 5. Hiển thị
+function hienThi() {
+    console.log('===DANH SÁCH QUÂN BÀI===');
+    // for (const el of danhSachQuanBai) {
+    //     for (const key in el) {
+    //         console.log(key + ": " + el[key]);
+    //     }
+    //     console.log("================");
+    // }
+    console.table(danhSachQuanBai);
 }
