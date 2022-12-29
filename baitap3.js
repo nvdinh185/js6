@@ -33,15 +33,12 @@ do {
         case '3':
             var engWord = prompt("Nhập từ tiếng Anh muốn tra: ");
 
-            var idx = arrWords.findIndex(function (word) {
+            var searchWord = arrWords.find(function (word) {
                 return word.eng == engWord;
             })
-            if (idx == -1) {
+            if (!searchWord) {
                 alert("Không tìm thấy!");
             } else {
-                var searchWord = arrWords.find(function (word) {
-                    return word.eng == engWord;
-                })
                 console.log(searchWord);
             }
             break;

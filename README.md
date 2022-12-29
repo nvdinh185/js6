@@ -76,7 +76,18 @@ const students = [
 ];
 ```
 
-- Sử dụng các hàm đã học ở trên để thực hiện các chức năng như: thêm, sửa, xóa sinh viên trong mảng đã cho
+Tạo menu chương trình như sau:
+--------------------------------------
+== QUẢN LÝ SINH VIÊN ==
+1. Xem danh sách sinh viên
+2. Thêm sinh viên
+3. Sửa sinh viên
+4. Xóa sinh viên
+--------------------------------------
+- Khi chọn 1: Hiện thị tất cả sinh viên trong danh sách.
+- Khi chọn 2: Nhập mới 1 sinh viên và thêm vào danh sách.
+- Khi chọn 3: Sửa 1 sinh viên trong danh sách theo id nhập vào.
+- Khi chọn 4: Thoát khỏi chương trình và in ra dòng chữ "Good bye!"
 
 # BÀI TẬP ĐỂ ÁP DỤNG CÁC HÀM, VÒNG LẶP ĐỐI VỚI MẢNG
 
@@ -84,18 +95,16 @@ const students = [
 
 Tạo menu chương trình như sau:
 --------------------------------------
-```html
 == TỪ ĐIỂN ANH VIỆT ==
---1. Nhập dữ liệu
---2. Xuất dữ liệu
---3. Dịch từ
---4. Thoát
-
-Khi chọn 1: Nhập thông tin các từ tiếng Anh từ bàn phím.
-Khi chọn 2: Hiển thị thông tin các từ tiếng Anh đã nhập.
-Khi chọn 3: Nhập vào một từ tiếng Anh bất kỳ, tìm kiếm trong từ điển, nếu có thì in nghĩa tiếng Việt của từ đó. Nếu không có thì in ra không tìm thấy.
-Khi chọn 4: Thoát khỏi chương trình và in ra dòng chữ “Cảm ơn đã sử dụng từ điển!”
-```
+1. Nhập dữ liệu
+2. Xuất dữ liệu
+3. Dịch từ
+4. Thoát
+--------------------------------------
+- Khi chọn 1: Nhập thông tin các từ tiếng Anh từ bàn phím.
+- Khi chọn 2: Hiển thị thông tin các từ tiếng Anh đã nhập.
+- Khi chọn 3: Nhập vào một từ tiếng Anh bất kỳ, tìm kiếm trong từ điển, nếu có thì in nghĩa tiếng Việt của từ đó. Nếu không có thì in ra không tìm thấy.
+- Khi chọn 4: Thoát khỏi chương trình và in ra dòng chữ "Cảm ơn đã sử dụng từ điển!"
 
 ## Bài tập 4: Cho danh sách các đội bóng tham dự World Cup như sau:
 
@@ -128,7 +137,7 @@ Tạo menu như sau:
 2. Xuất dữ liệu
 3. Tìm thông tin
 4. Xóa thông tin đội bóng
-0. Thoát
+5. Thoát
 ---------------------------------------
 
 - Khi chọn 1: Nhập đội bóng tham gia World Cup.
@@ -169,7 +178,7 @@ Tạo menu như sau:
 3. Sắp xếp tăng dần
 4. Sắp xếp giảm dần
 5. Xuất dữ liệu
-0. Thoát
+6. Thoát
 ---------------------------------------
 
 - Khi chọn 1: Nhập 1 quân bài và thêm vào danh sách
@@ -183,7 +192,7 @@ Tạo menu như sau:
 
 
 ```js
-var students = [
+const students = [
     {
         id: 1,
         name: "Dinh",
