@@ -1,4 +1,4 @@
-var students = [
+const students = [
     {
         id: 1,
         name: "Dinh",
@@ -50,7 +50,6 @@ var students = [
     }
 ];
 
-
 const menu = `1. kiểm tra xem có phải tất cả sinh viên đều có các môn trên điểm trung bình không?
 2. kiểm tra xem có sinh viên nào xếp loại giỏi không?
 3. lọc ra các sinh viên xếp loại giỏi
@@ -67,9 +66,17 @@ Nhập thao tác lựa chọn:`;
 var input = prompt(menu);
 
 if (input == 1) {
-    console.log(isUpNormal(students));
+    if (isUpNormal(students)) {
+        console.log('Tất cả sinh viên đều có các môn trên điểm trung bình');
+    } else {
+        console.log('Không phải tất cả sinh viên đều có các môn trên điểm trung bình');
+    }
 } else if (input == 2) {
-    console.log(haveGoodStudent(students));
+    if (haveGoodStudent(students)) {
+        console.log('có sinh viên nào xếp loại giỏi');
+    } else {
+        console.log('không có sinh viên nào xếp loại giỏi');
+    }
 } else if (input == 3) {
     displayGoodStudents(students);
 } else if (input == 4) {

@@ -261,6 +261,6 @@ const students = [
 
 7. Tính tổng điểm toán của các sinh viên
 
-8. tính điểm toán trung bình của các sinh viên
+8. Tính điểm toán trung bình của các sinh viên
 
 9. Sắp xếp danh sách sinh viên theo điểm toán tăng dần
