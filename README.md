@@ -87,7 +87,7 @@ Tạo menu chương trình như sau:
 - Khi chọn 1: Hiện thị tất cả sinh viên trong danh sách.
 - Khi chọn 2: Nhập mới 1 sinh viên và thêm vào danh sách.
 - Khi chọn 3: Sửa 1 sinh viên trong danh sách theo id nhập vào.
-- Khi chọn 4: Thoát khỏi chương trình và in ra dòng chữ "Good bye!"
+- Khi chọn 4: Xóa 1 sinh viên trong danh sách theo id nhập vào.
 
 # BÀI TẬP ĐỂ ÁP DỤNG CÁC HÀM, VÒNG LẶP ĐỐI VỚI MẢNG
 

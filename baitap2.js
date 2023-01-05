@@ -36,10 +36,11 @@ const students = [
     }
 ];
 
-const menu = `1. Xem danh sách sinh viên:
-2. Thêm sinh viên:
-3. Sửa sinh viên:
-4. Xóa sinh viên:
+const menu = `== QUẢN LÝ SINH VIÊN ==
+1. Xem danh sách sinh viên
+2. Thêm sinh viên
+3. Sửa sinh viên
+4. Xóa sinh viên
 
 Nhập thao tác lựa chọn:`;
 
