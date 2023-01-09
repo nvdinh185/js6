@@ -34,7 +34,48 @@ var arrNumber2 = [11, 22, 33, 44, 55];
 ```
 - Nối mảng arrNumber2 vào mảng arrNumber
 
-## Bài tập 2: Cho mảng sinh viên gồm các thông tin như sau:
+## Bài tập 2: Đọc hiểu chương trình sau và ghi chép những gì đã học được
+```js
+// Hàm tạo số ngẫu nhiên trong khoảng 0 đến max-1
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function searchIndex(number, array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === number) return i;
+    }
+    return -1;
+}
+
+function search(number, array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === number) return array[i];
+    }
+}
+
+var arrayNumber = [];
+
+for (let i = 0; i < 10; i++) {
+    arrayNumber.push(getRandomInt(10));
+}
+console.log(arrayNumber);
+
+var input = prompt('Nhập số muốn tìm: ');
+
+if (search(Number(input), arrayNumber)) {
+    console.log('Có tìm thấy số ' + input + ' trong mảng');
+} else {
+    console.log('Không tìm thấy!');
+}
+
+var idx = searchIndex(Number(input), arrayNumber);
+if (idx !== -1) {
+    console.log("Vị trí tìm thấy số " + input + " là: " + idx);
+}
+```
+
+## Bài tập 3: Cho mảng sinh viên gồm các thông tin như sau:
 
 ```js
 const students = [
@@ -91,7 +132,7 @@ Tạo menu chương trình như sau:
 
 # BÀI TẬP ĐỂ ÁP DỤNG CÁC HÀM, VÒNG LẶP ĐỐI VỚI MẢNG
 
-## Bài tập 3: Viết chương trình mô phỏng từ điển Anh Việt
+## Bài tập 4: Viết chương trình mô phỏng từ điển Anh Việt
 
 Tạo menu chương trình như sau:
 --------------------------------------
@@ -101,12 +142,12 @@ Tạo menu chương trình như sau:
 3. Dịch từ
 4. Thoát
 --------------------------------------
-- Khi chọn 1: Nhập thông tin các từ tiếng Anh từ bàn phím.
-- Khi chọn 2: Hiển thị thông tin các từ tiếng Anh đã nhập.
+- Khi chọn 1: Nhập thông tin các từ (gồm 2 thuộc tính: từ tiếng Anh và nghĩa tiếng Việt) từ bàn phím.
+- Khi chọn 2: Hiển thị thông tin các từ đã nhập.
 - Khi chọn 3: Nhập vào một từ tiếng Anh bất kỳ, tìm kiếm trong từ điển, nếu có thì in nghĩa tiếng Việt của từ đó. Nếu không có thì in ra không tìm thấy.
 - Khi chọn 4: Thoát khỏi chương trình và in ra dòng chữ "Cảm ơn đã sử dụng từ điển!"
 
-## Bài tập 4: Cho danh sách các đội bóng tham dự World Cup như sau:
+## Bài tập 5: Cho danh sách các đội bóng tham dự World Cup như sau:
 
 ```js
 const danhSachDoiBong = [
@@ -146,7 +187,7 @@ Tạo menu như sau:
 - Khi chọn 4: Nhập vào id và xóa thông tin đội bóng có id đó. Nếu không có thì thông báo "Không tìm thấy đội bóng nào để xóa".
 - Khi chọn 0: Thoát khỏi hệ thống và in ra dòng chữ: "Goodbye!"
 
-## Bài tập 5: Cho danh sách các quân bài như sau:
+## Bài tập 6: Cho danh sách các quân bài như sau:
 
 ```js
 const danhSachQuanBai = [
@@ -188,7 +229,7 @@ Tạo menu như sau:
 - Khi chọn 5: Hiển thị danh sách các quân bài
 - Khi chọn 0: Thoát khỏi hệ thống và in ra dòng chữ: "Goodbye!"
 
-## Bài tập 6: Cho mảng sinh viên gồm các thông tin như sau:
+## Bài tập 7: Cho mảng sinh viên gồm các thông tin như sau:
 
 
 ```js

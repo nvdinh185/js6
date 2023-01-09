@@ -1,29 +1,28 @@
-const danhSachQuanBai = [
+const danhSachDoiBong = [
     {
         id: 1,
-        name: 'Ba bích', // Tên quân bài, ví dụ: Năm cơ, Sáu bích...
-        exp: 3, //Hệ số quân bài (từ 1 đến 13)
-        point: 1 // Điểm của quân bài (từ 1 đến 4)
+        ten: 'Brazin',
+        huanLuyenVien: 'Tite',
+        soLanVoDich: 15
     },
     {
         id: 2,
-        name: 'Năm rô',
-        exp: 5,
-        point: 3
+        ten: 'Đức',
+        huanLuyenVien: 'Hansi Flick',
+        soLanVoDich: 10
     },
     {
         id: 3,
-        name: 'Bốn cơ',
-        exp: 4,
-        point: 4
+        ten: 'Pháp',
+        huanLuyenVien: 'Deschamps',
+        soLanVoDich: 12
     }
 ]
 
-const menu = `1. Nhập 1 quân bài
-2. Nhập mảng các quân bài
-3. Sắp xếp tăng dần
-4. Sắp xếp giảm dần
-5. Xuất dữ liệu
+const menu = `1. Nhập dữ liệu
+2. Xuất dữ liệu
+3. Tìm thông tin
+4. Xóa thông tin đội bóng
 0. Thoát
 
 Nhập thao tác lựa chọn:`;
@@ -31,89 +30,66 @@ Nhập thao tác lựa chọn:`;
 var input = prompt(menu);
 
 if (input == 1) {
-    them1QuanBai();
-    hienThi();
+    them();
+    console.table(danhSachDoiBong);
 } else if (input == 2) {
-    nhapMangQuanBai();
-    hienThi();
+    console.table(danhSachDoiBong);
 } else if (input == 3) {
-    sapXep();
-    hienThi();
+    console.table(danhSachDoiBong);
+    tim();
 } else if (input == 4) {
-    sapXep(1);
-    hienThi();
-} else if (input == 5) {
-    hienThi();
+    console.table(danhSachDoiBong);
+    xoa();
+    console.table(danhSachDoiBong);
 } else {
     console.log('Goodbye!');
 }
 
-// 1. Thêm 1 quân bài
-function them1QuanBai() {
-    var name = prompt('Nhập tên quân bài:');
-    var exp = prompt('Nhập hệ số:');
-    var point = prompt('Nhập điểm: ');
-    var quanBaiMoi = {
-        id: danhSachQuanBai.length + 1,
-        name: name,
-        exp: Number(exp),
-        point: Number(point)
+// 1. Thêm đội bóng
+function them() {
+    var ten = prompt('Nhập tên đội bóng:');
+    var huanLuyenVien = prompt('Nhập tên huấn luyện viên:');
+    var soLanVoDich = prompt('Nhập số lần vô địch: ');
+    var doiBongMoi = {
+        id: danhSachDoiBong.length + 1,
+        ten: ten,
+        huanLuyenVien: huanLuyenVien,
+        soLanVoDich: Number(soLanVoDich)
     }
-    danhSachQuanBai.push(quanBaiMoi);
+    danhSachDoiBong.push(doiBongMoi);
 }
 
-// 2. Nhập mảng quân bài
-function nhapMangQuanBai() {
-    var number = prompt('Nhập số lượng quân bài: ');
-    for (let i = 1; i <= number; i++) {
-        var name = prompt('Nhập tên quân bài:');
-        var exp = prompt('Nhập hệ số:');
-        var point = prompt('Nhập điểm: ');
-        var quanBaiMoi = {
-            id: danhSachQuanBai.length + 1,
-            name: name,
-            exp: Number(exp),
-            point: Number(point)
-        }
-        danhSachQuanBai.push(quanBaiMoi);
-    }
-}
-
-// 3-4. Sắp xếp
-function sapXep(desc) {
-    if (desc) {
-        function compare(a, b) {
-            if (a.exp < b.exp) {
-                return 1;
-            }
-            if (a.exp > b.exp) {
-                return -1;
-            }
-            return 0;
-        }
+// 2. Tìm đội bóng
+function tim() {
+    var id = prompt('Nhập id đội bóng muốn tìm: ');
+    var doiBong = search(Number(id), danhSachDoiBong);
+    if (doiBong) {
+        console.log(doiBong);
     } else {
-        function compare(a, b) {
-            if (a.exp > b.exp) {
-                return 1;
-            }
-            if (a.exp < b.exp) {
-                return -1;
-            }
-            return 0;
-        }
+        console.log('Không tìm thấy!');
     }
-
-    danhSachQuanBai.sort(compare);
 }
 
-// 5. Hiển thị
-function hienThi() {
-    console.log('===DANH SÁCH QUÂN BÀI===');
-    // for (const el of danhSachQuanBai) {
-    //     for (const key in el) {
-    //         console.log(key + ": " + el[key]);
-    //     }
-    //     console.log("================");
-    // }
-    console.table(danhSachQuanBai);
+// 3. Xóa đội bóng
+function xoa() {
+    var id = prompt('Nhập id đội bóng muốn xóa: ');
+    var idx = searchIndex(Number(id), danhSachDoiBong);
+    if (idx != -1) {
+        danhSachDoiBong.splice(idx, 1);
+    } else {
+        console.log('Không tìm thấy!');
+    }
+}
+
+function searchIndex(id, array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].id === id) return i;
+    }
+    return -1;
+}
+
+function search(id, array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].id === id) return array[i];
+    }
 }
