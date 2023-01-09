@@ -41,6 +41,7 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
+// Hàm tìm chỉ số của một số trong mảng
 function searchIndex(number, array) {
     for (let i = 0; i < array.length; i++) {
         if (array[i] === number) return i;
@@ -48,9 +49,27 @@ function searchIndex(number, array) {
     return -1;
 }
 
+// Hàm sắp xếp nổi bọt
+function bubbleSort(array) {
+    var size = array.length;
+
+    for (var i = 0; i < size - 1; i++) {
+        for (var j = 0; j < size - i - 1; j++) {
+
+            if (array[j] > array[j + 1]) {
+
+                var temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+        }
+    }
+}
+
+// Hàm tìm một số trong mảng
 function search(number, array) {
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] === number) return array[i];
+    for (let n of array) {
+        if (n === number) return n;
     }
 }
 
@@ -73,6 +92,9 @@ var idx = searchIndex(Number(input), arrayNumber);
 if (idx !== -1) {
     console.log("Vị trí tìm thấy số " + input + " là: " + idx);
 }
+
+bubbleSort(arrayNumber);
+console.log(arrayNumber);
 ```
 
 ## Bài tập 3: Cho mảng sinh viên gồm các thông tin như sau:
@@ -286,7 +308,7 @@ const students = [
 ];
 ```
 
-- Viết các hàm (sử dụng vòng lặp for, while, do..while) để xử lý các công việc sau:
+- Viết các hàm (sử dụng function, vòng lặp for, switch...case) để xử lý các công việc sau:
 
 1. Kiểm tra xem có phải tất cả sinh viên đều có các môn trên điểm trung bình không? (biết điểm trung bình là 5)
 
@@ -302,6 +324,6 @@ const students = [
 
 7. Tính tổng điểm toán của các sinh viên
 
-8. Tính điểm toán trung bình của các sinh viên
+8. Tính điểm toán trung bình của các sinh viên (làm tròn 2 chữ số thập phân)
 
 9. Sắp xếp danh sách sinh viên theo điểm toán tăng dần

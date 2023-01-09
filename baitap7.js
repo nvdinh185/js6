@@ -50,7 +50,9 @@ const students = [
     }
 ];
 
-const menu = `1. kiểm tra xem có phải tất cả sinh viên đều có các môn trên điểm trung bình không?
+showMenu();
+function showMenu() {
+    const menu = `1. kiểm tra xem có phải tất cả sinh viên đều có các môn trên điểm trung bình không?
 2. kiểm tra xem có sinh viên nào xếp loại giỏi không?
 3. lọc ra các sinh viên xếp loại giỏi
 4. tìm 1 sinh viên xếp loại giỏi
@@ -59,43 +61,66 @@ const menu = `1. kiểm tra xem có phải tất cả sinh viên đều có các
 7. tính tổng điểm toán của các sinh viên
 8. tính điểm toán trung bình của các sinh viên
 9. Sắp xếp danh sách sinh viên theo tổng điểm tăng dần
-0. Thoát
+10. Thoát
 
 Nhập thao tác lựa chọn:`;
+    var options = prompt(menu);
+    main(options);
+}
 
-var input = prompt(menu);
-
-if (input == 1) {
-    if (isUpNormal(students)) {
-        console.log('Tất cả sinh viên đều có các môn trên điểm trung bình');
-    } else {
-        console.log('Không phải tất cả sinh viên đều có các môn trên điểm trung bình');
+function main(options) {
+    switch (options) {
+        case '1':
+            if (isUpNormal(students)) {
+                console.log('Tất cả sinh viên đều có các môn trên điểm trung bình');
+            } else {
+                console.log('Không phải tất cả sinh viên đều có các môn trên điểm trung bình');
+            }
+            showMenu();
+            break;
+        case '2':
+            if (haveGoodStudent(students)) {
+                console.log('có sinh viên nào xếp loại giỏi');
+            } else {
+                console.log('không có sinh viên nào xếp loại giỏi');
+            }
+            showMenu();
+            break;
+        case '3':
+            displayGoodStudents(students);
+            showMenu();
+            break;
+        case '4':
+            console.log(findGoodStudent(students));
+            showMenu();
+            break;
+        case '5':
+            var listStudents = addMath(students);
+            for (const student of listStudents) {
+                console.log(student);
+            }
+            showMenu();
+            break;
+        case '6':
+            console.table(sumScore(students));
+            showMenu();
+            break;
+        case '7':
+            console.log("Tổng điểm toán của các sinh viên: ", totalMath(students));
+            showMenu();
+            break;
+        case '8':
+            console.log("Điểm toán trung bình của các sinh viên: ", (totalMath(students) / students.length).toFixed(2));
+            showMenu();
+            break;
+        case '9':
+            sortStudents(students);
+            showMenu();
+            break;
+        case '10':
+            exit();
+            break;
     }
-} else if (input == 2) {
-    if (haveGoodStudent(students)) {
-        console.log('có sinh viên nào xếp loại giỏi');
-    } else {
-        console.log('không có sinh viên nào xếp loại giỏi');
-    }
-} else if (input == 3) {
-    displayGoodStudents(students);
-} else if (input == 4) {
-    console.log(findGoodStudent(students));
-} else if (input == 5) {
-    var listStudents = addMath(students);
-    for (const student of listStudents) {
-        console.log(student);
-    }
-} else if (input == 6) {
-    console.log(sumScore(students));
-} else if (input == 7) {
-    console.log("Tổng điểm toán của các sinh viên: ", totalMath(students));
-} else if (input == 8) {
-    console.log("Điểm toán trung bình của các sinh viên: ", totalMath(students) / students.length);
-} else if (input == 9) {
-    sortStudents(students);
-} else {
-    console.log('Good bye!!!');
 }
 
 // 1. Hàm kiểm tra xem có phải tất cả sinh viên đều có các môn trên điểm trung bình không? (biết điểm trung bình là 5)
@@ -168,17 +193,22 @@ function totalMath(arrStudents) {
 //9. Hàm sắp xếp danh sách sinh viên theo tổng điểm tăng dần
 function sortStudents(arrStudents) {
 
-    function compare(a, b) {
-        if (a.toan > b.toan) {
-            return 1;
+    var size = arrStudents.length;
+
+    for (var i = 0; i < size - 1; i++) {
+        for (var j = 0; j < size - i - 1; j++) {
+            if (arrStudents[j].sum > arrStudents[j + 1].sum) {
+                var temp = arrStudents[j];
+                arrStudents[j] = arrStudents[j + 1];
+                arrStudents[j + 1] = temp;
+            }
         }
-        if (a.toan < b.toan) {
-            return -1;
-        }
-        return 0;
     }
 
-    arrStudents.sort(compare);
+    console.table(arrStudents);
+}
 
-    console.log(arrStudents);
+// 10. Thoát
+function exit() {
+    console.log('Good bye!!!');
 }

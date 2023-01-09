@@ -37,10 +37,10 @@ if (input == 1) {
     nhapMangQuanBai();
     hienThi();
 } else if (input == 3) {
-    sapXep();
+    bubbleSort();
     hienThi();
 } else if (input == 4) {
-    sapXep(1);
+    bubbleSort(1);
     hienThi();
 } else if (input == 5) {
     hienThi();
@@ -80,30 +80,26 @@ function nhapMangQuanBai() {
 }
 
 // 3-4. Sắp xếp
-function sapXep(desc) {
-    if (desc) {
-        function compare(a, b) {
-            if (a.exp < b.exp) {
-                return 1;
+function bubbleSort(desc) {
+    var size = danhSachQuanBai.length;
+
+    for (var i = 0; i < size - 1; i++) {
+        for (var j = 0; j < size - i - 1; j++) {
+            if (!desc) {
+                if (danhSachQuanBai[j].exp > danhSachQuanBai[j + 1].exp) {
+                    var temp = danhSachQuanBai[j];
+                    danhSachQuanBai[j] = danhSachQuanBai[j + 1];
+                    danhSachQuanBai[j + 1] = temp;
+                }
+            } else {
+                if (danhSachQuanBai[j].exp < danhSachQuanBai[j + 1].exp) {
+                    var temp = danhSachQuanBai[j];
+                    danhSachQuanBai[j] = danhSachQuanBai[j + 1];
+                    danhSachQuanBai[j + 1] = temp;
+                }
             }
-            if (a.exp > b.exp) {
-                return -1;
-            }
-            return 0;
-        }
-    } else {
-        function compare(a, b) {
-            if (a.exp > b.exp) {
-                return 1;
-            }
-            if (a.exp < b.exp) {
-                return -1;
-            }
-            return 0;
         }
     }
-
-    danhSachQuanBai.sort(compare);
 }
 
 // 5. Hiển thị
