@@ -308,7 +308,7 @@ const students = [
 ];
 ```
 
-- Viết các hàm (sử dụng function, vòng lặp for, switch...case) để xử lý các công việc sau:
+- Viết chương trình (sử dụng function, vòng lặp for, switch...case) để xử lý các công việc sau:
 
 1. Kiểm tra xem có phải tất cả sinh viên đều có các môn trên điểm trung bình không? (biết điểm trung bình là 5)
 
@@ -326,4 +326,4 @@ const students = [
 
 8. Tính điểm toán trung bình của các sinh viên (làm tròn 2 chữ số thập phân)
 
-9. Sắp xếp danh sách sinh viên theo điểm toán tăng dần
+9. Sắp xếp danh sách sinh viên theo tổng điểm tăng dần

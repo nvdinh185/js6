@@ -17,7 +17,7 @@ const students = [
         id: 3,
         name: "Tan",
         toan: 3,
-        ly: 4,
+        ly: 5,
         hoa: 5,
     },
     {
@@ -52,7 +52,8 @@ const students = [
 
 showMenu();
 function showMenu() {
-    const menu = `1. kiểm tra xem có phải tất cả sinh viên đều có các môn trên điểm trung bình không?
+    const menu = `=== QUẢN LÝ SINH VIÊN ===
+1. kiểm tra xem có phải tất cả sinh viên đều có các môn trên điểm trung bình không?
 2. kiểm tra xem có sinh viên nào xếp loại giỏi không?
 3. lọc ra các sinh viên xếp loại giỏi
 4. tìm 1 sinh viên xếp loại giỏi
@@ -96,9 +97,7 @@ function main(options) {
             break;
         case '5':
             var listStudents = addMath(students);
-            for (const student of listStudents) {
-                console.log(student);
-            }
+            console.table(listStudents);
             showMenu();
             break;
         case '6':
@@ -181,7 +180,7 @@ function sumScore(arrStudents) {
     return listNewStudents;
 }
 
-// 7. Hàm tính tổng điểm toán của các sinh viên, và tính điểm toán trung bình của các sinh viên
+// 7. Hàm tính tổng điểm toán của các sinh viên
 function totalMath(arrStudents) {
     var sum = 0;
     for (const student of arrStudents) {
