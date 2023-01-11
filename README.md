@@ -34,7 +34,7 @@ var arrNumber2 = [11, 22, 33, 44, 55];
 ```
 - Nối mảng arrNumber2 vào mảng arrNumber
 
-## Bài tập 2: Đọc hiểu chương trình sau và ghi chép những gì đã học được
+## Bài tập 2: Chạy chương trình sau và ghi chép những gì đã học được
 ```js
 // Hàm tạo số ngẫu nhiên trong khoảng 0 đến max-1
 function getRandomInt(max) {
